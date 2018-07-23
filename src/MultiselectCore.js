@@ -453,7 +453,7 @@ export default {
         this.pointer = 1
       }
 
-      this.isOpen = true
+      // this.isOpen = true
       /* istanbul ignore else  */
       if (this.searchable && !this.preserveSearch) this.search = ''
       this.$emit('open', this.id)
@@ -465,12 +465,15 @@ export default {
     deactivate () {
       /* istanbul ignore else */
       if (!this.isOpen) return
+      console.log('TESTE')
 
       window.removeEventListener('click', this.clickOutsideHandler)
 
-      this.$nextTick(() => {
-        this.isOpen = false
-      })
+      /*
+        this.$nextTick(() => {
+          this.isOpen = false
+        })
+      */
 
       if (!this.preserveSearch) this.search = ''
       this.$emit('close', this.getValue(), this.id)

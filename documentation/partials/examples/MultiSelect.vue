@@ -12,7 +12,10 @@ div
     placeholder="Pick some"
     label="name",
     track-by="name",
-    :preselect-first="true"
+    :is-open="isOpen",
+    :preselect-first="true",
+    @open="open",
+    @close="close"
   )
     template(slot="tag", slot-scope="props")
       span.custom__tag
@@ -34,6 +37,7 @@ export default {
   data () {
     return {
       value: [],
+      isOpen: false,
       options: [
         { name: 'Vue.js', language: 'JavaScript' },
         { name: 'Adonis', language: 'JavaScript' },
@@ -42,6 +46,14 @@ export default {
         { name: 'Laravel', language: 'PHP' },
         { name: 'Phoenix', language: 'Elixir' }
       ]
+    }
+  },
+  methods: {
+    open() {
+      this.isOpen = true
+    },
+    close() {
+      this.isOpen = false
     }
   }
 }
