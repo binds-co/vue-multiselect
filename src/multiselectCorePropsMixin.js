@@ -385,6 +385,10 @@ export default {
       type: Boolean,
       default: true
     },
+    isOpen: {
+      type: Boolean,
+      default: false
+    },
     optionHeight: {
       type: Number,
       default: 40

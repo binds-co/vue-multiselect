@@ -18,7 +18,6 @@ export default {
   data () {
     return {
       search: '',
-      isOpen: false,
       prefferedOpenDirection: 'below',
       optimizedHeight: this.maxHeight,
       pointer: 0,
